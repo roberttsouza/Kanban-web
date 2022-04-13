@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Kanban Web</title>
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li>Tasks</li>
+      <li><button class="btnaddt" type="submit" onclick="addnewtask()">Add New Task</button></li>
+    </ul>
+  </nav>
+
+  <section class="secBloco">
+    <div class="blocoContainer">
+
+      <div class="blocoContent" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <h1>To Do</h1>
+          <div class="tesk" draggable="true" ondragstart="drag(event)">
+            <p>bora fazer um teste</p>
+          </div>
+
+      </div>
+      <div class="blocoContent" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <h1>In Progress</h1>
+      </div>
+
+      <div class="blocoContent" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <h1>Pending</h1>
+      </div>
+
+      <div class="blocoContent" ondrop="drop(event)" ondragover="allowDrop(event)">
+        <h1>Done</h1>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+</html>
