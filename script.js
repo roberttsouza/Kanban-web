@@ -3,18 +3,21 @@ function addnewtask(){
   const tTask = window.prompt("Informe o nove da sua nova TASK: ");
   const cTask = window.prompt("Informe o conteúdo da sua TASK: ");
 
-//verificar se o id task ja existe e acrecentando um numero a frente
-  var noId = "#task";
-  var numId = 0;
-  if(numId == numId){
-    var resId = `${noId}` + `${numId}`;
-  }else{
-    var  resId = `${noId}` + `${++numId}`;
-}
+
+//gerando id aleatorio para a nova task criada
+  var size = 12;// informando quando digitos terá o id 
+  
+  var randomize = Math.ceil(Math.random() * Math.pow(10,size));// criando um numero aleatório conforme definido na variavel size
+  var digito = Math.ceil(Math.log(randomize));// criando um digito verificador inicial
+
+  while(digito > 10){
+    digito = Math.ceil(Math.log(digito))//pega o digito e refina até dicar menor que 10
+  }
+  var id = randomize + "_" + digito; //criando id e concatenando com o digito.
 
   const novo_elemento = document.createElement('div'); //informando que o elemento será uma div
   novo_elemento.className = "tesk"; // atribuindo uma class para o elemento criado
-  novo_elemento.id = resId; // atribuindo um id para o elemento criado
+  novo_elemento.id = id; // atribuindo um id para o elemento criado
   novo_elemento.draggable = "true"; //add o atributo draggable para o elemento 
   novo_elemento.setAttribute("ondragstart", "drag(event)"); // add atributo de Ondragstart no elemento criado 
   novo_elemento.innerHTML = `${tTask}<br>${cTask}`; 
@@ -23,6 +26,10 @@ function addnewtask(){
   elemento.appendChild(novo_elemento); //informado que o ele será criado após os elementos ja existentes
 
 };
+
+
+
+
 
 //função de arrastar e soltar o elemento criado
 function allowDrop(ev){
