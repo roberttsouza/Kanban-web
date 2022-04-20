@@ -15,16 +15,27 @@ function addnewtask(){
   }
   var id = randomize + "_" + digito; //criando id e concatenando com o digito.
 
+
+
   const novo_elemento = document.createElement('div'); //informando que o elemento será uma div
   novo_elemento.className = "tesk"; // atribuindo uma class para o elemento criado
   novo_elemento.id = id; // atribuindo um id para o elemento criado
   novo_elemento.draggable = "true"; //add o atributo draggable para o elemento 
   novo_elemento.setAttribute("ondragstart", "drag(event)"); // add atributo de Ondragstart no elemento criado 
-  novo_elemento.innerHTML = `${tTask}<br>${cTask}`; 
+  novo_elemento.innerHTML = `${tTask}<button class="close" type="submit">X</button><br>${cTask}`; 
 
   const elemento = document.querySelector(".blocoContent"); // selecionando onde o elemento será criado
   elemento.appendChild(novo_elemento); //informado que o ele será criado após os elementos ja existentes
 
+
+  //botão para excluir a task desejada
+  const close_btns = document.querySelectorAll(".close");//criar variavel com a clase informada 
+
+  close_btns.forEach((btn) => { 
+    btn.addEventListener("click", () => {
+    btn.parentElement.style.display = "none";//crindo uma função de evendo para modificar o display da clase selecionada para none. isso não     exclui o elemento, somente deixa ele oculto.
+  });
+});
 };
 
 
