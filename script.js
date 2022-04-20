@@ -18,11 +18,13 @@ function addnewtask(){
 
 
   const novo_elemento = document.createElement('div'); //informando que o elemento será uma div
-  novo_elemento.className = "tesk"; // atribuindo uma class para o elemento criado
+  novo_elemento.className = "task"; // atribuindo uma class para o elemento criado
   novo_elemento.id = id; // atribuindo um id para o elemento criado
   novo_elemento.draggable = "true"; //add o atributo draggable para o elemento 
   novo_elemento.setAttribute("ondragstart", "drag(event)"); // add atributo de Ondragstart no elemento criado 
-  novo_elemento.innerHTML = `${tTask}<button class="close" type="submit">X</button><br>${cTask}`; 
+  novo_elemento.innerHTML = `<button class="close" type="submit">&times;</button>
+                              <h3>${tTask}</h3> 
+                              <p>${cTask}</p>`; 
 
   const elemento = document.querySelector(".blocoContent"); // selecionando onde o elemento será criado
   elemento.appendChild(novo_elemento); //informado que o ele será criado após os elementos ja existentes

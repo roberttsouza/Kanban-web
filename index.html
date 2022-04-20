@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <title>Kanban Web</title>
 </head>
@@ -20,22 +22,22 @@
     <div class="blocoContainer">
 
       <div class="blocoContent" ondrop="drop(event)" ondragover="allowDrop(event)">
-        <h1>To Do</h1>
-          <div id="task" class="tesk" draggable="true" ondragstart="drag(event)">
+        <h1><span>📝</span> To Do</h1>
+          <div id="task" class="task" draggable="true" ondragstart="drag(event)">
             <p>bora fazer um teste</p>
           </div>
 
       </div>
       <div class="blocoContent" ondrop="drop(event)" ondragover="allowDrop(event)">
-        <h1>In Progress</h1>
+        <h1><span>⌛</span> In Progress</h1>
       </div>
 
       <div class="blocoContent" ondrop="drop(event)" ondragover="allowDrop(event)">
-        <h1>Pending</h1>
+        <h1><span>📌</span> Pending</h1>
       </div>
 
       <div class="blocoContent" ondrop="drop(event)" ondragover="allowDrop(event)">
-        <h1>Done</h1>
+        <h1><span>✨</span> Done</h1>
       </div>
 
     </div>
